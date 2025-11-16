@@ -39,6 +39,7 @@ TodoList/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v14+)
 - MongoDB (running on localhost:27017)
 - npm or yarn
@@ -46,12 +47,14 @@ TodoList/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repo-url>
    cd TodoList
    ```
 
 2. **Install backend dependencies**
+
    ```bash
    cd server
    npm install
@@ -66,21 +69,26 @@ TodoList/
 ### Running the Application
 
 **Terminal 1 - Backend Server**
+
 ```bash
 cd server
 npm start
 ```
+
 Expected output:
+
 ```
 ✅ MongoDB connected
 Server is running on port 5001
 ```
 
 **Terminal 2 - Frontend Development Server**
+
 ```bash
 cd todolist
 npm run dev
 ```
+
 Open the local URL provided by Vite (typically http://localhost:5173 or http://localhost:5174)
 
 ## 📚 API Endpoints
@@ -88,13 +96,16 @@ Open the local URL provided by Vite (typically http://localhost:5173 or http://l
 ### Modern RESTful Endpoints (Recommended)
 
 - **POST** `/api/todos` - Create a new todo
+
   - Body: `{ "task": "string" }`
   - Returns: Created todo document with `_id` and `completed` fields
 
 - **GET** `/api/todos` - Fetch all todos
+
   - Returns: Array of todo documents sorted by creation date (newest first)
 
 - **PATCH** `/api/todos/:id` - Update a todo (toggle completion status)
+
   - Body: `{ "completed": true/false }`
   - Returns: Updated todo document
 
@@ -110,12 +121,14 @@ Open the local URL provided by Vite (typically http://localhost:5173 or http://l
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **React 18** - UI framework
 - **Vite** - Build tool & dev server
 - **Axios** - HTTP client
 - **CSS3** - Styling with gradients, animations, and flexbox
 
 ### Backend
+
 - **Express.js** - Web framework
 - **MongoDB** - NoSQL database
 - **Mongoose** - MongoDB ODM
@@ -125,13 +138,17 @@ Open the local URL provided by Vite (typically http://localhost:5173 or http://l
 ## 📖 Component Overview
 
 ### Create.jsx
+
 Handles task input, validation, and creation. Shows success/error messages and loading states.
 
 ### home.jsx
+
 Main container managing the todo list. Handles fetching, toggling completion, and deleting tasks with optimistic UI updates.
 
 ### App.css
+
 Modern minimalist styling including:
+
 - Gradient background
 - Centered card layout
 - Animated hover effects
@@ -159,6 +176,7 @@ Modern minimalist styling including:
 ## 📝 Environment Variables
 
 Create a `.env` file in the `server/` folder if you want to customize:
+
 ```
 PORT=5001
 MONGODB_URI=mongodb://localhost:27017/demo
@@ -168,6 +186,7 @@ NODE_ENV=development
 ## 🐛 Troubleshooting
 
 **Port 5001 already in use**
+
 ```bash
 # Find the process using port 5001
 netstat -ano | findstr :5001
@@ -177,23 +196,28 @@ taskkill /PID <PID> /F
 ```
 
 **MongoDB connection fails**
+
 - Ensure MongoDB is running: `mongosh` or check MongoDB service status
 - Verify connection string in `server/index.js`
 
 **Frontend not loading**
+
 - Check Vite dev server is running and accessible at reported URL
 - Clear browser cache and restart dev server
 
 ## 📦 Building for Production
 
 ### Frontend
+
 ```bash
 cd todolist
 npm run build
 ```
+
 Creates optimized build in `dist/` folder
 
 ### Backend
+
 No build step needed; use `npm start` with proper environment variables
 
 ## 🤝 Contributing
